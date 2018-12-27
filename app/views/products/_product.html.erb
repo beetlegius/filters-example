@@ -1,0 +1,13 @@
+<%= tag.tr id: dom_id(product) do %>
+  <td><%= product.id %></td>
+  <td><%= product.name %></td>
+  <td><%= number_to_currency product.price %></td>
+  <td><%= product.category_label %></td>
+  <td>
+    <div class="btn-group">
+      <%= product.show_button %>
+      <%= product.edit_button %>
+      <%= product.delete_button %>
+    </div>
+  </td>
+<% end %>
