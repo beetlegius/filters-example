@@ -30,4 +30,32 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  all: 'All'
+  confirm: 'Are you sure?'
+  filter: 'Search'
+  operations: 'Operations'
+  edition: 'Edit'
+  delete: 'Delete'
+  products_filter:
+    name: 'Search by name'
+    price_gte: 'Price from'
+    price_lte: 'Price to'
+    category_id: 'Category'
+  products_presenter:
+    id: 'ID'
+    name: 'Product name'
+    price: 'Price in USD'
+    category: 'Category'
+  
+  activerecord:
+    models:
+      product: 'Products'
+      category: 'Categories'
+      
+  views:
+    pagination:
+      first: "&laquo;"
+      last: "&raquo;"
+      previous: "&lsaquo;"
+      next: "&rsaquo;"
+      truncate: "&hellip;"

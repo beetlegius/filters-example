@@ -1,0 +1,3 @@
+$('#products').find('tbody').html("<%= j render(@presenter.products) %>");
+$('#pagination-count').html("<%= j page_entries_info(@presenter.products) %>");
+$('[data-behavior="pagination"]').html("<%= j paginate(@presenter.products, remote: true) %>");

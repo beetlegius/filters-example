@@ -1,0 +1,33 @@
+<%= form_with model: @presenter.filter, url: products_path, method: :get do |f| %>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= f.label :name, t(:name, scope: :products_filter) %>
+        <%= f.text_field :name, autofocus: true, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="form-group">
+        <%= f.label :price_gte, t(:price_gte, scope: :products_filter) %>
+        <%= f.number_field :price_gte, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="form-group">
+        <%= f.label :price_lte, t(:price_lte, scope: :products_filter) %>
+        <%= f.number_field :price_lte, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="form-group">
+        <%= f.label :category_id, t(:category_id, scope: :products_filter) %>
+        <%= f.collection_select :category_id, categories_options, :id, :name, { include_blank: t(:all) }, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <br>
+      <%= link_to fa_icon(:eraser), products_path, class: 'btn btn-secondary mt-2' %>
+      <%= f.submit t(:filter), class: 'btn btn-primary mt-2' %>
+    </div>
+  </div>
+<% end %>
