@@ -1,0 +1,34 @@
+<h3>
+  <%= fa_icon 'shopping-cart', text: Product.model_name.human %>
+</h3>
+
+<hr>
+
+<div class="panel panel-default">
+  <div class="panel-body background-grey">
+    <%= render 'filter' %>
+    <hr />
+    <%= tag.div page_entries_info(@presenter.products), id: 'pagination-count', class: 'text-center lead' %>
+    <hr>
+    <%= tag.div paginate(@presenter.products, remote: true), data: { behavior: 'pagination' } %>
+    
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered table-hover" id="products">
+        <thead>
+          <tr>
+            <% ProductsPresenter::FIELDS.each do |field| %>
+              <th><%= t(field, scope: :products_presenter) %></th>
+            <% end %>
+            <th class="operations"><%= t :operations %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render @presenter.products %>
+        </tbody>
+      </table>
+    </div>
+    
+    <%= tag.div paginate(@presenter.products, remote: true), data: { behavior: 'pagination' } %>
+
+  </div>
+</div>

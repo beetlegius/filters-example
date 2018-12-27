@@ -1,0 +1,2 @@
+class CategoryDecorator < ApplicationDecorator
+end
